@@ -14,7 +14,7 @@ const commonConfig = {
   output: {
     filename: 'js/[name].js?[chunkhash:4]',
     path: PATHS.build,
-    publicPath: ''
+    publicPath: '../'
   },
 
   module: {
@@ -49,7 +49,8 @@ const commonConfig = {
 
 const developmentConfig = {
   devServer: {
-    stats: 'errors-only'
+    stats: 'errors-only',
+    publicPath: '/'
   },
 
   devtool: 'source-map',
@@ -100,6 +101,7 @@ module.exports = (mode) => {
     const jsPath = path.parse(js)
     const name = jsPath.name
     const htmlFilePath = `${jsPath.dir}/${name}.html`
+    const subPath = getSubPath(jsPath.dir)
 
     try {
       fs.accessSync(htmlFilePath)
@@ -110,7 +112,7 @@ module.exports = (mode) => {
         },
         plugins: [
           new HtmlWebpackPlugin({
-            filename: `${name}.html`,
+            filename: `${subPath}${name}.html`,
             template: htmlFilePath
           })
         ]
@@ -122,7 +124,7 @@ module.exports = (mode) => {
         },
         plugins: [
           new HtmlWebpackPlugin({
-            filename: `${name}.html`
+            filename: `${subPath}${name}.html`
           })
         ]
       }
@@ -138,4 +140,11 @@ module.exports = (mode) => {
   console.log('config list: ', configList.length)
 
   return configList
+}
+
+function getSubPath(dir) {
+  const dirList = dir.split('/')
+  const srcIndex = dirList.indexOf('src')
+  const result = dirList.slice(srcIndex + 1).join('/')
+  return result === '' ? '' : `${result}/`
 }

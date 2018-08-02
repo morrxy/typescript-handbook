@@ -2,8 +2,8 @@
 export {}
 
 // Array
-let list: number[] = [1, 2, 3]
+const list: number[] = [1, 2, 3]
 console.log(list)
 
-let list2: Array<number> = [4, 5, 6]
+const list2: Array<number> = [4, 5, 6]
 console.log(list2)

@@ -4,6 +4,6 @@ export {}
 // Null and Undefined
 
 // Not much else we can assign to these variables!
-let u: undefined = undefined
-let n: null = null
+const u: undefined = undefined
+const n: null = null
 console.log(u, n)

@@ -2,9 +2,9 @@
 export {}
 
 // Number
-let decimal: number = 6;
-let hex: number = 0xf00d;
-let binary: number = 0b1010;
-let octal: number = 0o744;
+const decimal: number = 6;
+const hex: number = 0xf00d;
+const binary: number = 0b1010;
+const octal: number = 0o744;
 
 console.log(decimal, hex, binary, octal)

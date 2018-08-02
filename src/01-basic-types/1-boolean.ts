@@ -2,5 +2,5 @@
 export {}
 
 // Boolean
-let isDone: boolean = false
+const isDone: boolean = false
 console.log(isDone)

@@ -7,5 +7,5 @@ function warnUser(): void {
 }
 warnUser()
 
-let unusable: void = undefined
+const unusable: void = undefined
 console.log(unusable)
