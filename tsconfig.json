@@ -7,6 +7,7 @@
     "jsx": "react",
     "strictNullChecks": true,
     "noUnusedLocals": false,
-    "noUnusedParameters": false
+    "noUnusedParameters": false,
+    "noImplicitThis": false
   }
 }
