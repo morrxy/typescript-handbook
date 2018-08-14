@@ -8,6 +8,11 @@
     "no-empty": false,
     "member-access": false,
     "max-classes-per-file": false,
-    "trailing-comma": false
+    "trailing-comma": false,
+    "array-type": false,
+    "only-arrow-functions": false,
+    "no-bitwise": false,
+    "no-string-literal": false,
+    "no-shadowed-variable": false
   }
 }
