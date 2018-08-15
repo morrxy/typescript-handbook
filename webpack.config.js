@@ -4,6 +4,7 @@ const merge = require('webpack-merge')
 const glob = require('glob')
 const fs = require('fs')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 const PATHS = {
   app: path.join(__dirname, 'src'),
@@ -29,10 +30,18 @@ const commonConfig = {
         loader: 'html-loader',
         options: {}
       },
+      // {
+      //   test: /\.tsx?$/,
+      //   loader: "awesome-typescript-loader",
+      //   include: PATHS.app
+      // },
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader",
-        include: PATHS.app
+        loader: 'ts-loader',
+        include: PATHS.app,
+        options: {
+          transpileOnly: true // HMR doesn't work without this
+        }
       },
       {
         test: /\.js$/,
@@ -44,7 +53,11 @@ const commonConfig = {
 
   resolve: {
     extensions: ['.js', '.ts', '.tsx']
-  }
+  },
+
+  plugins: [
+    new ForkTsCheckerWebpackPlugin()
+  ]
 }
 
 const developmentConfig = {
