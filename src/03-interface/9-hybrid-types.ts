@@ -8,7 +8,7 @@ interface Counter {
 }
 
 function getCounter(): Counter {
-  const counter = <Counter>function (start: number) { };
+  const counter = <Counter>function(start: number) { };
   counter.interval = 123;
   counter.reset = () => { };
   return counter;

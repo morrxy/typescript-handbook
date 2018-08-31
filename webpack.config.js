@@ -45,7 +45,7 @@ const commonConfig = {
       },
       {
         test: /\.js$/,
-        loader: "source-map-loader",
+        loader: 'source-map-loader',
         enforce: 'pre'
       }
     ]
@@ -56,7 +56,9 @@ const commonConfig = {
   },
 
   plugins: [
-    new ForkTsCheckerWebpackPlugin()
+    new ForkTsCheckerWebpackPlugin({
+      tslint: false
+    })
   ]
 }
 
@@ -155,7 +157,7 @@ module.exports = (mode) => {
   return configList
 }
 
-function getSubPath(dir) {
+function getSubPath (dir) {
   const dirList = dir.split('/')
   const srcIndex = dirList.indexOf('src')
   const result = dirList.slice(srcIndex + 1).join('/')

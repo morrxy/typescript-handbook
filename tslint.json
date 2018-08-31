@@ -16,6 +16,7 @@
     "no-shadowed-variable": false,
     "arrow-parens": false,
     "no-angle-bracket-type-assertion": false,
-    "whitespace": false
+    "whitespace": false,
+    "forin": false
   }
 }
