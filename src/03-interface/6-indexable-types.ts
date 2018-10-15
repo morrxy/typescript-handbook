@@ -25,6 +25,11 @@ interface NotOkay {
   [x: string]: Dog
 }
 
+interface Okay {
+  [x: number]: Dog // ok
+  [x: string]: Animal
+}
+
 interface NumberDictionary {
   [index: string]: number
   length: number

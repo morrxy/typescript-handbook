@@ -17,6 +17,9 @@
     "arrow-parens": false,
     "no-angle-bracket-type-assertion": false,
     "whitespace": false,
-    "forin": false
+    "forin": false,
+    "space-before-function-paren": true,
+    "no-namespace": false,
+    "no-reference": false
   }
 }
